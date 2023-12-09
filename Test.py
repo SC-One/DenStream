@@ -137,7 +137,7 @@ for i_dataset, (dataset, algo_params) in enumerate(datasets):
 
         t1 = time.time()
         if hasattr(algorithm, 'labels_'):
-            y_pred = algorithm.labels_.astype(np.int)
+            y_pred = algorithm.labels_.astype(int)
         elif name == 'DenStream':
             y_pred = algorithm.fit_predict(X)
             y_pred[y_pred == -1] = 5
